@@ -30,6 +30,7 @@ const Wrap = styled.div`
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     div{
         border-radius: 10px;
@@ -54,5 +55,6 @@ const Img = styled.img`
     height: 100%;
     object-fit: cover;
     object-position: center;
+    text-align: center;
 `
 export default ListItem

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import { Link, NavLink } from 'react-router-dom'
+import { toast } from 'react-toastify';
+
 // import { auth, provider } from '../firebase.js'
 function Header() {
     // const handleAuth = () => {
@@ -12,6 +14,20 @@ function Header() {
     //             alert(error.message)
     //         })
     // }
+    const [path, setPath] = useState('/')
+    useEffect(
+        () => {
+            const Bt = document.querySelector('#BtnLogin')
+            Bt.onclick =
+                (e) => {
+                    window.location.pathname === '/' ?
+                        setPath('/home') :
+                        setPath('/')
+                }
+
+        }, [path]
+    )
+
     return (
         <NavLogin>
             <NavLogo src='/images/logo.svg' />
@@ -50,10 +66,17 @@ function Header() {
             </Menu>
 
 
-            <Link to='/home'>
+            <Link to={path}>
                 <BtnLogin
-                // onClick={handleAuth}
-                >
+                    // onClick={handleAuth}
+                    onClick={(e) => {
+                        window.location.pathname === '/home' ||
+                            window.location.pathname === '/data' ?
+                            e.target.innerText = 'LOGIN' :
+                            e.target.innerText = 'LOGOUT'
+                        toast.info('DONE!')
+                    }}
+                    id='BtnLogin'>
                     LOGIN
                 </BtnLogin>
             </Link>
@@ -71,7 +94,7 @@ const NavLogin = styled.div`
     left: 0;
     right: 0;
     padding: 15px 15px;
-    z-index: 1;
+    z-index: 10;
 `
 const NavLogo = styled.img`
     cursor: pointer;

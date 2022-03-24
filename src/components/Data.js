@@ -7,25 +7,29 @@ function Data() {
                 <Wrap>
                     <img src='/images/logo.svg' />
                     <Icon>
-                        <Div1>
-                            <div>
-                                <img src='/images/play-icon-black.png' />
-                            </div>
-                            Play
-                        </Div1>
-                        <Div2>
-                            <div>
-                                <img src='/images/play-icon-white.png' />
-                            </div>
-                            Trailer
-                        </Div2>
-                        <Div3>
-                            <img src='/images/group-icon.png' />
-                        </Div3>
+                        <div>
+                            <Div1>
+                                <div>
+                                    <img src='/images/play-icon-black.png' />
+                                </div>
+                                Play
+                            </Div1>
+                            <Div2>
+                                <div>
+                                    <img src='/images/play-icon-white.png' />
+                                </div>
+                                Trailer
+                            </Div2>
+                        </div>
+                        <div>
+                            <Div3>
+                                <img src='/images/group-icon.png' />
+                            </Div3>
 
-                        <Div4>
-                            <span>+</span>
-                        </Div4>
+                            <Div4>
+                                <span>+</span>
+                            </Div4>
+                        </div>
                     </Icon>
                     <p>2022 • 1h 93m • Science, Action, Antihero, Action-Adventure</p>
                 </Wrap>
@@ -85,6 +89,15 @@ const Icon = styled.div`
     @media (max-width: 768px){
         margin-top: 15vh;
         width: 125vh;
+        flex-direction: column;
+        align-items: unset;
+        div{
+            align-items: center;
+        }
+        
+    }
+    div{
+        display: flex;
     }
 `
 const Div1 = styled.div`
