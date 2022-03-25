@@ -29,11 +29,12 @@ function Login() {
 
                 <Centre>
                     <HeadCentre src='/images/cta-logo-one.svg' />
-                    <Btn onClick={() =>
-                        setTimeout(() => {
-                            setShow(!show)
-                        }, 2000)
-                    }>
+                    <Btn 
+//                         onClick={() =>
+//                         setTimeout(() => {
+//                             setShow(!show)
+//                         }, 2000)}
+                        >
                         GET ALL THERE
                     </Btn>
                     <TextCentre>
